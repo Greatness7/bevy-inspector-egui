@@ -40,7 +40,7 @@
 use std::any::TypeId;
 use std::marker::PhantomData;
 
-use crate::utils::{pretty_type_name, pretty_type_name_str};
+use crate::utils::pretty_type_name;
 use bevy_asset::{Asset, AssetServer, Assets, ReflectAsset, UntypedAssetId};
 use bevy_ecs::query::{QueryFilter, WorldQuery};
 use bevy_ecs::world::CommandQueue;
@@ -696,7 +696,7 @@ fn components_of_entity(
         .components()
         .map(|component_id| {
             let info = world.world().components().get_info(component_id).unwrap();
-            let name = pretty_type_name_str(info.name());
+            let name = info.name().shortname().to_string();
 
             (name, component_id, info.type_id(), info.layout().size())
         })
