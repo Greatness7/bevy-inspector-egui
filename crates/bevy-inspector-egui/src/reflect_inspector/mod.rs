@@ -992,17 +992,14 @@ impl InspectorUi<'_, '_> {
             ui.label("(Empty Map)");
             ui.end_row();
         }
-        let mut to_delete = None;
-
-        let keys: Vec<_> = map.iter().map(|(key, _)| key.to_dynamic()).collect();
-
         egui::Grid::new(id).show(ui, |ui| {
+            let keys: Vec<_> = map.iter().map(|(key, _)| key.to_dynamic()).collect();
             for (i, key) in keys.into_iter().enumerate() {
                 if let Some(value) = map.get_mut(&*key) {
                     self.ui_for_reflect_readonly_with_options(&*key, ui, id.with(i), &());
                     changed |= self.ui_for_reflect_with_options(value, ui, id.with(i), &());
                     if remove_button(ui).on_hover_text("Remove element").clicked() {
-                        to_delete = Some(key);
+                        map.remove(&*key);
                     }
                     ui.end_row();
                 }
@@ -1010,11 +1007,6 @@ impl InspectorUi<'_, '_> {
 
             self.map_add_element_ui(map, ui, id, &mut changed);
         });
-
-        if let Some(key) = to_delete {
-            map.remove(&*key);
-        }
-
         changed
     }
 
