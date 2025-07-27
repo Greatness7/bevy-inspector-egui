@@ -1068,7 +1068,7 @@ pub mod short_circuit {
                 );
                 let asset_value =
                 // SAFETY: the world allows mutable access to `Assets<T>`
-                unsafe { reflect_asset.get_unchecked_mut(world.world(), handle) };
+                unsafe { reflect_asset.get_unchecked_mut(world.world(), &handle) };
                 match asset_value {
                     Some(value) => value,
                     None => {
@@ -1164,7 +1164,7 @@ pub mod short_circuit {
                     );
                     let asset_value =
                         // SAFETY: the world allows mutable access to `Assets<T>`
-                        unsafe { reflect_asset.get_unchecked_mut(world.world(), handle) };
+                        unsafe { reflect_asset.get_unchecked_mut(world.world(), &handle) };
                     match asset_value {
                         Some(value) => value,
                         None => {
@@ -1248,7 +1248,7 @@ pub mod short_circuit {
                 assert!(
                     assets_view.allows_access_to_resource(reflect_asset.assets_resource_type_id())
                 );
-                let asset_value = reflect_asset.get(interior_mutable_world, handle);
+                let asset_value = reflect_asset.get(interior_mutable_world, &handle);
                 match asset_value {
                     Some(value) => value,
                     None => {
