@@ -36,32 +36,9 @@ features = ["winit/x11"]
 
 [dependencies]
 winit = { version = "0.30.0", default-features = false }
-
 bevy-inspector-egui-derive = { version = "0.32.0", path = "../bevy-inspector-egui-derive" }
-bevy_app = { version = "0.16.0" }
-bevy_asset = { version = "0.16.0" }
-bevy_color = { version = "0.16.0" }
-bevy_platform = { version = "0.16.0" }
-#bevy_core = { version = "0.16.0" }
-bevy_ecs = { version = "0.16.0" }
-#bevy_hierarchy = { version = "0.16.0" }
-bevy_log = { version = "0.16.0" }
-bevy_math = { version = "0.16.0" }
-bevy_reflect = { version = "0.16.0" }
-bevy_state = { version = "0.16.0" }
-bevy_time = { version = "0.16.0" }
-bevy_utils = { version = "0.16.0" }
-bevy_window = { version = "0.16.0" }
-
-bevy_render = { version = "0.16.0", optional = true }
-bevy_core_pipeline = { version = "0.16.0", optional = true }
-bevy_pbr = { version = "0.16.0", optional = true }
-bevy_image = { version = "0.16.0", optional = true }
-
-egui = "0.31"
-
-bevy_egui = { version = "0.35.0", default-features = false }
-
+egui = "0.32"
+# bevy_egui = { version = "0.35.0", default-features = false }
 bytemuck = "1.16.0"
 image = { version = "0.25", default-features = false }
 smallvec = "1.10"
@@ -71,25 +48,8 @@ disqualified = "1.0.0"
 uuid = "1.11.0"
 
 [dev-dependencies]
-bevy = { version = "0.16.0", default-features = false, features = [
-    "std",
-    "x11",
-    "bevy_winit",
-    "bevy_state",
-    "bevy_window",
-    "bevy_pbr",
-    "bevy_sprite",
-    "bevy_core_pipeline",
-    "bevy_picking",
-    "animation",
-    "png",
-    "zstd",
-    "tonemapping_luts",
-    "ktx2",
-] }
-egui_dock = "0.16"
-bevy_math = { version = "0.16.0", features = ["mint"] }
 transform-gizmo-egui = "0.6"
+egui_dock = "0.16"
 # bevy_mod_picking = { git = "https://github.com/aevyrie/bevy_mod_picking", rev = "554649a951689dce66d0d759839b326874e8826f", default-features = false, features = ["backend_raycast", "backend_egui", "backend_sprite"] }
 # bevy_framepace = "0.11"
 
@@ -137,3 +97,102 @@ path = "examples/integrations/egui_dock.rs"
 [[example]]
 name = "side_panel"
 path = "examples/integrations/side_panel.rs"
+
+[dependencies.bevy_app]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_asset]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_color]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_platform]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_ecs]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_log]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_math]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_state]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_time]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_utils]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_window]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+
+[dependencies.bevy_render]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+optional = true
+
+[dependencies.bevy_core_pipeline]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+optional = true
+
+[dependencies.bevy_pbr]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+optional = true
+
+[dependencies.bevy_image]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+optional = true
+
+[dependencies.bevy_reflect]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+optional = true
+
+[dependencies.bevy_egui]
+git = "https://github.com/Greatness7/bevy_egui.git"
+rev = "1a686b0d6e8229d6d8fa64f470a88ec1b450fd84"
+
+[dev-dependencies.bevy]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+default-features = false
+features = [
+    "animation",
+    "bevy_core_pipeline",
+    "bevy_pbr",
+    "bevy_picking",
+    "bevy_sprite",
+    "bevy_state",
+    "bevy_window",
+    "bevy_winit",
+    "ktx2",
+    "png",
+    "std",
+    "tonemapping_luts",
+    "x11",
+    "zstd_c",
+]
+
+[dev-dependencies.bevy_math]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+features = ["mint"]
