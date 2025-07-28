@@ -17,7 +17,21 @@ quote = "1.0"
 proc-macro2 = "1.0"
 
 [dev-dependencies]
-bevy_ecs = { version = "0.16.0-rc", default-features = false }
-bevy_math = { version = "0.16.0-rc", default-features = false }
-bevy_reflect = { version = "0.16.0-rc", default-features = false }
-bevy-inspector-egui = { path = "../bevy-inspector-egui" }
+
+[dev-dependencies.bevy_ecs]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+default-features = false
+
+[dev-dependencies.bevy_math]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+default-features = false
+
+[dev-dependencies.bevy_reflect]
+git = "https://github.com/bevyengine/bevy"
+rev = "01eff3ea937535bc7384ff361029129475d98263"
+default-features = false
+
+[dev-dependencies.bevy-inspector-egui]
+path = "../bevy-inspector-egui"

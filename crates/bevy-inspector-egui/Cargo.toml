@@ -47,56 +47,13 @@ fuzzy-matcher = "0.3.7"
 disqualified = "1.0.0"
 uuid = "1.11.0"
 
+
 [dev-dependencies]
 transform-gizmo-egui = "0.6"
-egui_dock = "0.16"
+# egui_dock = "0.17"
 # bevy_mod_picking = { git = "https://github.com/aevyrie/bevy_mod_picking", rev = "554649a951689dce66d0d759839b326874e8826f", default-features = false, features = ["backend_raycast", "backend_egui", "backend_sprite"] }
 # bevy_framepace = "0.11"
 
-
-[[example]]
-name = "inspector_options"
-path = "examples/basic/inspector_options.rs"
-
-[[example]]
-name = "custom_type_ui"
-path = "examples/basic/custom_type_ui.rs"
-
-[[example]]
-name = "resource_inspector_manual"
-path = "examples/basic/resource_inspector_manual.rs"
-
-[[example]]
-name = "resource_inspector"
-path = "examples/quick/resource_inspector.rs"
-
-[[example]]
-name = "filter_query_inspector"
-path = "examples/quick/filter_query_inspector.rs"
-
-[[example]]
-name = "asset_inspector"
-path = "examples/quick/asset_inspector.rs"
-
-[[example]]
-name = "world_inspector"
-path = "examples/quick/world_inspector.rs"
-
-[[example]]
-name = "world_inspector_assets"
-path = "examples/quick/world_inspector_assets.rs"
-
-[[example]]
-name = "state_inspector"
-path = "examples/quick/state_inspector.rs"
-
-[[example]]
-name = "egui_dock"
-path = "examples/integrations/egui_dock.rs"
-
-[[example]]
-name = "side_panel"
-path = "examples/integrations/side_panel.rs"
 
 [dependencies.bevy_app]
 git = "https://github.com/bevyengine/bevy"
@@ -125,6 +82,7 @@ rev = "01eff3ea937535bc7384ff361029129475d98263"
 [dependencies.bevy_math]
 git = "https://github.com/bevyengine/bevy"
 rev = "01eff3ea937535bc7384ff361029129475d98263"
+features = ["std"]
 
 [dependencies.bevy_state]
 git = "https://github.com/bevyengine/bevy"
@@ -195,4 +153,49 @@ features = [
 [dev-dependencies.bevy_math]
 git = "https://github.com/bevyengine/bevy"
 rev = "01eff3ea937535bc7384ff361029129475d98263"
-features = ["mint"]
+features = ["mint", "std"]
+
+
+[[example]]
+name = "inspector_options"
+path = "examples/basic/inspector_options.rs"
+
+[[example]]
+name = "custom_type_ui"
+path = "examples/basic/custom_type_ui.rs"
+
+[[example]]
+name = "resource_inspector_manual"
+path = "examples/basic/resource_inspector_manual.rs"
+
+[[example]]
+name = "resource_inspector"
+path = "examples/quick/resource_inspector.rs"
+
+[[example]]
+name = "filter_query_inspector"
+path = "examples/quick/filter_query_inspector.rs"
+
+[[example]]
+name = "asset_inspector"
+path = "examples/quick/asset_inspector.rs"
+
+[[example]]
+name = "world_inspector"
+path = "examples/quick/world_inspector.rs"
+
+[[example]]
+name = "world_inspector_assets"
+path = "examples/quick/world_inspector_assets.rs"
+
+[[example]]
+name = "state_inspector"
+path = "examples/quick/state_inspector.rs"
+
+# [[example]]
+# name = "egui_dock"
+# path = "examples/integrations/egui_dock.rs"
+
+[[example]]
+name = "side_panel"
+path = "examples/integrations/side_panel.rs"
